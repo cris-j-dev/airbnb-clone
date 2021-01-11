@@ -51,6 +51,8 @@ class RoomAdmin(admin.ModelAdmin):
         "check_out",
         "instant_book",
         "count_amenities",
+        "count_photos",
+        "total_rating",
     )
 
     list_filter = (
@@ -70,8 +72,10 @@ class RoomAdmin(admin.ModelAdmin):
     filter_horizontal = ("amenities", "facilities", "house_rules")
 
     def count_amenities(self, obj):
-        print(obj)
-        return "Potato"
+        return obj.amenities.count()
+
+    def count_photos(self, obj):
+        return obj.photos.count()
 
     count_amenities.short_description = "test_amenities"
 
