@@ -15,7 +15,7 @@ class HomeView(ListView):
     context_object_name = "rooms"
 
 
-class RoomDetail(DetailVeiw):
+class RoomDetail(DetailView):
 
     """ RoomDetail Definition """
 
